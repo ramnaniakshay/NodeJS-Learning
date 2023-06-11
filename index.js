@@ -93,6 +93,26 @@ app.get('/number', function(req, res) {
   }
 });
 
+app.set('view engine','hbs');
+
+app.get('/profile', (req, res) => {
+    const data = {
+      title: 'My App',
+      heading: 'Welcome to my app',
+      items: ['item 1', 'item 2', 'item 3']
+    };
+    res.render('index', data);
+  });
+  
+app.get('/dashboard', (req, res) => {
+    const data = {
+        title: 'Login Page',
+        is_logged_in: true,
+        username: 'Akshay'
+      };      
+    res.render('home', data);
+  });
+
 
 app.get('*', (req, res) => {
   res.send(' Custom 404 Page Not Found');

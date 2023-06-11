@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+  </head>
+  <body>
+    {{#if is_logged_in}}
+      <h1>Welcome {{username}}!</h1>
+      <p>You are now logged in.</p>
+    {{else}}
+      <h1>Please Log In</h1>
+      <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Log In</button>
+      </form>
+    {{/if}}
+  </body>
+</html>
